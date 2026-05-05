@@ -1,0 +1,46 @@
+<div style="padding: 20px; font-family: Arial, sans-serif;">
+  
+  <!-- CREATE SECTION -->
+  <div style="margin-bottom: 30px; border: 1px solid #ccc; padding: 15px;">
+    <h3>Add Forecast</h3>
+    <label>Date:</label>
+    <input type="date" [(ngModel)]="newForecast.date">
+    
+    <label> Temp (C):</label>
+    <input type="number" [(ngModel)]="newForecast.temperatureC" style="width: 50px;">
+    
+    <label> Summary:</label>
+    <input type="text" [(ngModel)]="newForecast.summary" placeholder="e.g. freezing">
+    
+    <button (click)="create()">Submit</button>
+  </div>
+
+  <hr>
+
+  <!-- GET SECTION -->
+  <h3>Database Records</h3>
+  <table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background-color: #f0f0f0;">
+        <th>ID</th>
+        <th>Date</th>
+        <th>Celsius</th>
+        <th>Fahrenheit</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>     
+        <tr *ngFor="let item of data;">
+          <td style="font-size: 10px; color: gray;">{{ item.id }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.temperatureC }}°C</td>
+          <td>{{ item.temperatureF }}°F</td>
+          <td>{{ item.summary }}</td>
+        </tr>      
+        <tr *ngIf= "!data.length">
+          <td colspan="5" style="text-align: center;">No data available</td>
+        </tr>
+     
+    </tbody>
+  </table>
+</div>
