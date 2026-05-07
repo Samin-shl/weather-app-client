@@ -10,7 +10,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.html'
 })
 export class App implements OnInit {
-  readonly API_URL = 'https://backend-weather-app-ftg0fdgxhvffa3a3.canadacentral-01.azurewebsites.net/WeatherForecast';
+  //readonly API_URL = 'https://backend-weather-app-ftg0fdgxhvffa3a3.canadacentral-01.azurewebsites.net/WeatherForecast';
+  //readonly API_URL = 'https://localhost:7242/WeatherForecast';
+  readonly API_URL = 'https://backend-prod-weather-app-a7g7h6aqaghzaefw.southeastasia-01.azurewebsites.net/WeatherForecast';
   public data: any[] = [];
   
   newForecast = {
